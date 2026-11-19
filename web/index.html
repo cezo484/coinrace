@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Coin Race</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%23f7931a'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%230a0d12'%3E%E2%82%BF%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="stage">
+  <div class="frame">
+    <canvas id="game" width="480" height="720"></canvas>
+
+    <div class="hud" id="hud" hidden>
+      <div class="hud-top">
+        <div class="hud-pos" id="hud-pos">8/8</div>
+        <div class="hud-time" id="hud-time">0:00.0</div>
+        <div class="hud-speed" id="hud-speed">0 km/h</div>
+      </div>
+      <div class="hud-progress">
+        <div class="hud-progress-fill" id="hud-progress-fill"></div>
+        <span class="hud-dist" id="hud-dist">0 / 1000 m</span>
+      </div>
+      <div class="standings" id="standings"></div>
+      <div class="notify" id="notify" hidden></div>
+    </div>
+
+    <div class="countdown" id="countdown" hidden>3</div>
+
+    <div class="overlay" id="menu">
+      <h1>Coin Race</h1>
+      <p class="tagline">Pick a coin. Dodge the red candles. Ride the green ones.</p>
+      <p class="market-status" id="market-status">Loading market data...</p>
+      <div class="coin-grid" id="coin-grid"></div>
+      <button class="btn" id="start-btn">Start race</button>
+      <p class="best" id="menu-best" hidden></p>
+      <p class="controls">Arrow keys or A/D to switch lanes, drag to steer, P to pause.</p>
+    </div>
+
+    <div class="overlay" id="pause" hidden>
+      <h2>Paused</h2>
+      <p class="howto">The market waits for no one. Except now.</p>
+      <button class="btn" id="resume-btn">Resume</button>
+      <button class="btn secondary" id="quit-btn">Quit to menu</button>
+    </div>
+
+    <div class="overlay" id="podium" hidden>
+      <h2>Race finished!</h2>
+      <div class="podium-row" id="podium-row"></div>
+      <p class="final-pos" id="final-pos"></p>
+      <p class="final-stats" id="final-stats"></p>
+      <p class="new-best" id="new-best" hidden>New best!</p>
+      <button class="btn" id="again-btn">Race again</button>
+      <button class="btn secondary" id="menu-btn">Menu</button>
+    </div>
+
+    <button class="mute-btn" id="mute-btn" aria-label="Mute sound">🔊</button>
+  </div>
+  <p class="foot">Built for CLAY Hackathon III on Sui. Market data: CoinGecko.</p>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

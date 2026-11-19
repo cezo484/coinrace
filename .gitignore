@@ -1,0 +1,5 @@
+node_modules/
+.toolchain/
+sui-move/build/
+*.log
+.DS_Store
